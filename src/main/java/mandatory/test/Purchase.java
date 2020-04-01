@@ -9,9 +9,8 @@ public class Purchase {
 
     public boolean internetConnection;
     public int phoneLines;
-    public ArrayList<String> cellPhones;
+    public ArrayList<String> cellPhones = new ArrayList<>();
     public int price = 0;
-    public List<String> selectedItems;
 
     public Purchase() {
     }
@@ -23,34 +22,34 @@ public class Purchase {
         this.price = price;
     }
 
-    public boolean isInternetConnection() {
-        return internetConnection;
-    }
-
+//    public boolean isInternetConnection() {
+//        return internetConnection;
+//    }
+//
     public void setInternetConnection(boolean internetConnection) {
         this.internetConnection = internetConnection;
     }
-
-    public int getPhoneLines() {
-        return phoneLines;
-    }
-
+//
+//    public int getPhoneLines() {
+//        return phoneLines;
+//    }
+//
     public void setPhoneLines(int phoneLines) {
         this.phoneLines = phoneLines;
     }
-
-    public List<String> getCellPhones() {
-        return cellPhones;
-    }
-
+//
+//    public List<String> getCellPhones() {
+//        return cellPhones;
+//    }
+//
     public void setCellPhones(ArrayList<String> cellPhones) {
         this.cellPhones = cellPhones;
     }
-
-    public int getPrice() {
-        return price;
-    }
-
+//
+//    public int getPrice() {
+//        return price;
+//    }
+//
     public void setPrice(int price) {
         this.price = price;
     }
@@ -61,6 +60,8 @@ public class Purchase {
         if (internetConnection) {
             this.price = this.price + 200;
             System.out.println("Internet connection");
+            setInternetConnection(true);
+
         } else {
             this.price = this.price - 200;
             System.out.println("Internet connection removed");
@@ -91,6 +92,9 @@ public class Purchase {
 
 
     public int addCellPhone(String model) {
+
+        cellPhones.add(model);
+
         switch (model) {
             case "Motorola G99":
                 System.out.println("Motorola G99 added");
@@ -113,12 +117,18 @@ public class Purchase {
                 price = price + 900;
                 break;
         }
+
         return price;
     }
 
 
 
     public int removeCellPhone(String model) {
+        int index = cellPhones.indexOf(model);
+        if(index == -1){
+            return price;
+        }
+        cellPhones.remove(index);
         switch (model) {
             case "Motorola G99":
                 System.out.println("Motorola G99 removed");
@@ -146,12 +156,68 @@ public class Purchase {
 
     }
 
-    public String totalPrice() {
-        return "Total price: " + getPrice();
+    public String buy(){
+
+        String purchase = "\nYour Cart: \n\n";
+        int phoneLinePrice = 0;
+
+        if(internetConnection){
+
+            int internetPrice = 200;
+
+            purchase = purchase + "Internet Connection: " + internetPrice + " DKK\n";
+        }
+
+        if(phoneLines < 8 && phoneLines > 0){
+
+            phoneLinePrice = phoneLinePrice + (phoneLines * 150);
+            purchase = purchase + String.valueOf(phoneLines) + " Phone lines: " + phoneLinePrice + "\n";
+        }
+
+        for (int i = 0; i < cellPhones.size(); i++) {
+
+            switch (cellPhones.get(i)){
+
+                case "iPhone 99":
+                    purchase = purchase + "iPhone 99: 6000 DKK\n";
+                    break;
+
+                case "Sony Xperia 99":
+                    purchase = purchase + "Sony Xperia 99: 900 DKK\n";
+                    break;
+
+                case "Motorola G99":
+                    purchase = purchase + "Motorola G99: 800 DKK\n";
+                    break;
+
+                case "Samsung Galaxy 99":
+                    purchase = purchase + "Samsunng Galaxy 99: 1000 DKK\n";
+                    break;
+
+                case "Huawei 99":
+                    purchase = purchase + "Huawei 99: 900 DKK\n";
+                    break;
+            }
+
+        }
+
+        System.out.println(purchase + "\nTotal price: " + price + " DKK");
+
+        purchase = purchase + "\nTotal price: " + price + "DKK";
+
+        return purchase;
+
     }
 
-    public void reset() {
+    public String reset(){
+
+        setInternetConnection(false);
+        cellPhones.removeAll(cellPhones);
+        setPhoneLines(0);
         setPrice(0);
+
+        return "Shopping cart has been reset";
+
     }
 
 

@@ -18,7 +18,7 @@ public class HomeController {
     }
 
     @PostMapping("/check-InternetConnection")
-    public @ResponseBody int checkInternetConnection(@RequestParam(defaultValue = "false") boolean internetConnection){
+    public @ResponseBody int checkInternetConnection(boolean internetConnection){
         return purchase.checkInternetConnection(internetConnection);
     }
 
@@ -33,13 +33,23 @@ public class HomeController {
     }
 
     @PostMapping("/add-CellPhone")
-    public @ResponseBody int addCellPhone(@RequestParam(defaultValue = "false") String cellphone){
+    public @ResponseBody int addCellPhone(String cellphone){
         return purchase.addCellPhone(cellphone);
     }
 
     @PostMapping("/remove-CellPhone")
-    public @ResponseBody int removeCellPhone(@RequestParam(defaultValue = "false") String cellphone){
+    public @ResponseBody int removeCellPhone(String cellphone){
         return purchase.removeCellPhone(cellphone);
+    }
+
+    @PostMapping("/buy")
+    public @ResponseBody String buyProducts() {
+        return purchase.buy();
+    }
+
+    @PostMapping("/reset")
+    public @ResponseBody String reset(){
+        return purchase.reset();
     }
 
 }
