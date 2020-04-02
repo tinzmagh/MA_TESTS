@@ -58,7 +58,6 @@ public class Purchase {
         if (phoneLines <= 8 && phoneLines >= 0) {
             phoneLines++;
             System.out.println("phone line added");
-            System.out.println("hej");
             price = price + 150;
         } else {
             IllegalArgumentException exception = new IllegalArgumentException("8 phone lines is the maximum");
