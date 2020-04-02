@@ -55,18 +55,15 @@ public class Purchase {
 
     public int addPhoneLine() {
 
-        if (phoneLines <= 8) {
+        if (phoneLines <= 8 && phoneLines >= 0) {
             phoneLines++;
             System.out.println("phone line added");
             price = price + 150;
-
-        } else  {
+        } else {
             IllegalArgumentException exception = new IllegalArgumentException("8 phone lines is the maximum");
             System.out.println("8 phone lines is the maximum");
             throw exception;
-
         }
-
         return price;
     }
 
@@ -118,10 +115,10 @@ public class Purchase {
 
 
     public int removeCellPhone(String model) {
+        // Find the first occurence of the string inside our cellPhones array
         int index = cellPhones.indexOf(model);
-        if(index == -1){
-            return price;
-        }
+        /*if(index == -1){
+            return price; }*/
         cellPhones.remove(index);
         switch (model) {
             case "Motorola G99":
