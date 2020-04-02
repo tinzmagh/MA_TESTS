@@ -116,5 +116,12 @@ class PurchaseTest {
         purchase.addCellPhone("iPhone 99");
 
         assertEquals("\nYour Cart: \n\n" + "Internet Connection: 200 DKK\n" + "1 Phone lines: 150\n" + "iPhone 99: 6000 DKK\n" + "\nTotal price: 6350DKK", purchase.buy());
+        assertEquals(purchase.price, 6350);
+
+        purchase.addPhoneLine();
+        assertEquals(purchase.price, 6500);
+
+        purchase.removeCellPhone("iPhone 99");
+        assertEquals(purchase.price, 500);
     }
 }
