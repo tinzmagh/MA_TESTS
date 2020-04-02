@@ -1,0 +1,134 @@
+Started by GitHub push by tinzmagh
+Running as SYSTEM
+Building in workspace /Users/phillipeismark/.jenkins/workspace/TestingMandatory
+No credentials specified
+ > /usr/bin/git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > /usr/bin/git config remote.origin.url https://github.com/tinzmagh/MA_TESTS.git # timeout=10
+Fetching upstream changes from https://github.com/tinzmagh/MA_TESTS.git
+ > /usr/bin/git --version # timeout=10
+ > /usr/bin/git fetch --tags --force --progress -- https://github.com/tinzmagh/MA_TESTS.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > /usr/bin/git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > /usr/bin/git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 7a72b6b394e181777fbe063168d98c533ea03eef (refs/remotes/origin/master)
+ > /usr/bin/git config core.sparsecheckout # timeout=10
+ > /usr/bin/git checkout -f 7a72b6b394e181777fbe063168d98c533ea03eef # timeout=10
+Commit message: "testing github webhook"
+ > /usr/bin/git rev-list --no-walk 1cf9cbac51054f4b0d7dcd2d22b0f2a5e8e71e3e # timeout=10
+[TestingMandatory] $ /Users/phillipeismark/.jenkins/tools/hudson.tasks.Maven_MavenInstallation/M3/bin/mvn test
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------------< mandatory:test >---------------------------
+[INFO] Building test 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ test ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ test ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 3 source files to /Users/phillipeismark/.jenkins/workspace/TestingMandatory/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ test ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/phillipeismark/.jenkins/workspace/TestingMandatory/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ test ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to /Users/phillipeismark/.jenkins/workspace/TestingMandatory/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.2:test (default-test) @ test ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running mandatory.test.PurchaseTest
+8 phone lines is the maximum
+Motorola G99 added
+Motorola G99 removed
+iPhone 99 added
+iPhone 99 removed
+Samsung Galaxy 99 added
+Samsung Galaxy 99 removed
+Sony Xperia 99 added
+Sony Xperia 99 removed
+Huawei 99 added
+Huawei 99 removed
+Internet connection
+Internet connection removed
+Motorola G99 added
+iPhone 99 added
+Samsung Galaxy 99 added
+Sony Xperia 99 added
+Huawei 99 added
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 s - in mandatory.test.PurchaseTest
+[INFO] Running mandatory.test.TestApplicationTests
+16:13:52.058 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+16:13:52.075 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+16:13:52.126 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [mandatory.test.TestApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+16:13:52.155 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [mandatory.test.TestApplicationTests], using SpringBootContextLoader
+16:13:52.162 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [mandatory.test.TestApplicationTests]: class path resource [mandatory/test/TestApplicationTests-context.xml] does not exist
+16:13:52.163 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [mandatory.test.TestApplicationTests]: class path resource [mandatory/test/TestApplicationTestsContext.groovy] does not exist
+16:13:52.165 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [mandatory.test.TestApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+16:13:52.169 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [mandatory.test.TestApplicationTests]: TestApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:13:52.235 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [mandatory.test.TestApplicationTests]
+16:13:52.334 [main] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/phillipeismark/.jenkins/workspace/TestingMandatory/target/classes/mandatory/test/TestApplication.class]
+16:13:52.337 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration mandatory.test.TestApplication for test class mandatory.test.TestApplicationTests
+16:13:52.469 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [mandatory.test.TestApplicationTests]: using defaults.
+16:13:52.469 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+16:13:52.489 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+16:13:52.491 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+16:13:52.491 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@55cf0d14, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3b74ac8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@27adc16e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@b83a9be, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2609b277, org.springframework.test.context.event.EventPublishingTestExecutionListener@1fd14d74, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@563e4951, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4066c471, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2b175c00, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3eb81efb, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1ae8bcbc]
+16:13:52.500 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@45a4b042 testClass = TestApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@16b2bb0c testClass = TestApplicationTests, locations = '{}', classes = '{class mandatory.test.TestApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4ef37659, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e268090, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@2abf4075, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@53976f5c], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+16:13:52.564 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.2.6.RELEASE)
+
+2020-04-02 16:13:53.449  INFO 32495 --- [           main] mandatory.test.TestApplicationTests      : Starting TestApplicationTests on Phillips-MacBook-Pro.local with PID 32495 (started by phillipeismark in /Users/phillipeismark/.jenkins/workspace/TestingMandatory)
+2020-04-02 16:13:53.451  INFO 32495 --- [           main] mandatory.test.TestApplicationTests      : No active profile set, falling back to default profiles: default
+2020-04-02 16:13:57.091  INFO 32495 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-02 16:13:57.324  INFO 32495 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-02 16:13:57.829  INFO 32495 --- [           main] mandatory.test.TestApplicationTests      : Started TestApplicationTests in 5.246 seconds (JVM running for 8.35)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.356 s - in mandatory.test.TestApplicationTests
+2020-04-02 16:14:02.478  INFO 32495 --- [extShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  21.685 s
+[INFO] Finished at: 2020-04-02T16:14:04+02:00
+[INFO] ------------------------------------------------------------------------
+[TestingMandatory] $ /Users/phillipeismark/.jenkins/tools/hudson.tasks.Maven_MavenInstallation/M3/bin/mvn compile
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------------< mandatory:test >---------------------------
+[INFO] Building test 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ test ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 1 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ test ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.772 s
+[INFO] Finished at: 2020-04-02T16:14:11+02:00
+[INFO] ------------------------------------------------------------------------
+Archiving artifacts
+Finished: SUCCESS
