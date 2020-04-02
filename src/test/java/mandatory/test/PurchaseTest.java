@@ -63,7 +63,7 @@ class PurchaseTest {
         Purchase purchase = new Purchase();
         int i;
         for(i = 0; i < cellPhones.size(); i++) {
-            purchase.addCellPhone(cellPhones.get(i)); // tilføjer en tlf - incrementer den også price?
+            purchase.addCellPhone(cellPhones.get(i));
             assertEquals(purchase.removeCellPhone(cellPhones.get(i)), purchase.price);
         }
 
