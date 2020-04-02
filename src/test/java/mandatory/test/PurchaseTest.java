@@ -59,12 +59,11 @@ class PurchaseTest {
 
     @Test
     void removeCellPhone() {
-        //make price generalised
-        //Purchase purchase = new Purchase(false, 0, cellPhones, 9600);
+
         Purchase purchase = new Purchase();
         int i;
         for(i = 0; i < cellPhones.size(); i++) {
-            purchase.addCellPhone(cellPhones.get(i)); //tiføjer en tlf - incrementer den også price?
+            purchase.addCellPhone(cellPhones.get(i)); // tilføjer en tlf - incrementer den også price?
             assertEquals(purchase.removeCellPhone(cellPhones.get(i)), purchase.price);
         }
 
