@@ -47,7 +47,7 @@ class PurchaseTest {
 
     @Test
     void addCellPhone() {
-    // Check that the addCellPhone method returns the appropiate price for each corresponding phone
+    // Check that the addCellPhone method returns the appropiate price for each corresponding phonez
         Purchase purchase = new Purchase();
         int i;
 
