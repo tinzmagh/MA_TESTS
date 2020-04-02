@@ -1,6 +1,7 @@
 package mandatory.test;
 
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,37 +23,19 @@ public class Purchase {
         this.price = price;
     }
 
-//    public boolean isInternetConnection() {
-//        return internetConnection;
-//    }
-//
     public void setInternetConnection(boolean internetConnection) {
         this.internetConnection = internetConnection;
     }
-//
-//    public int getPhoneLines() {
-//        return phoneLines;
-//    }
-//
+
     public void setPhoneLines(int phoneLines) {
         this.phoneLines = phoneLines;
     }
-//
-//    public List<String> getCellPhones() {
-//        return cellPhones;
-//    }
-//
-    public void setCellPhones(ArrayList<String> cellPhones) {
-        this.cellPhones = cellPhones;
-    }
-//
-//    public int getPrice() {
-//        return price;
-//    }
-//
+
     public void setPrice(int price) {
         this.price = price;
     }
+
+
 
 
     public int checkInternetConnection(boolean internetConnection) {
@@ -72,11 +55,18 @@ public class Purchase {
 
     public int addPhoneLine() {
 
-        if (phoneLines < 8) {
+        if (phoneLines <= 8) {
             phoneLines++;
             System.out.println("phone line added");
             price = price + 150;
+
+        } else  {
+            IllegalArgumentException exception = new IllegalArgumentException("8 phone lines is the maximum");
+            System.out.println("8 phone lines is the maximum");
+            throw exception;
+
         }
+
         return price;
     }
 
@@ -86,6 +76,10 @@ public class Purchase {
             phoneLines--;
             System.out.println("phone line removed");
             price = price - 150;
+        } else {
+            IllegalArgumentException exception = new IllegalArgumentException("8 phone lines is the maximum");
+            System.out.println("8 phone lines is the maximum");
+            throw exception;
         }
         return price;
     }
@@ -168,7 +162,7 @@ public class Purchase {
             purchase = purchase + "Internet Connection: " + internetPrice + " DKK\n";
         }
 
-        if(phoneLines < 8 && phoneLines > 0){
+        if(phoneLines <= 8 && phoneLines >= 0){
 
             phoneLinePrice = phoneLinePrice + (phoneLines * 150);
             purchase = purchase + String.valueOf(phoneLines) + " Phone lines: " + phoneLinePrice + "\n";
