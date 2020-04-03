@@ -88,7 +88,7 @@ class PurchaseTest {
             purchase.price = 0;
         }
     }
-
+//gf
     @Test
     void removeCellPhone() {
 
@@ -100,6 +100,10 @@ class PurchaseTest {
             assertEquals(purchase.removeCellPhone(cellPhones.get(i)), purchase.price);
         }
     }
+
+
+
+
 
     @Test
     void buy() {
