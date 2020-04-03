@@ -7,32 +7,27 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PurchaseTest {
 
+    // Data provider
     ArrayList<String> cellPhones = new ArrayList<String>( Arrays.asList("Motorola G99", "iPhone 99", "Samsung Galaxy 99", "Sony Xperia 99", "Huawei 99"));
     ArrayList<Integer> cellPhonePrices = new ArrayList<Integer>( Arrays.asList(800, 6000, 1000, 900, 900));
 
     @Test
     void checkInternetConnection() {
-
-        // Given parameters
-        // From start
         Purchase purchase = new Purchase();
-        // When internet Connection boolean touched
         Purchase purchaseCheck = new Purchase(false, 0, null, 0);
-        // Then Expected Test True
+
+        // Expected to be true as default (assert false)
         assertFalse(purchase.internetConnection);
         // Then Expected price to be price + 200
         assertEquals(purchase.price + 200, purchaseCheck.checkInternetConnection(true));
         // Then Expected price to be price - 200
         assertEquals(purchase.price, purchaseCheck.checkInternetConnection(false));
-
     }
 
     @Test
     void addPhoneLine() {
 
         // Tests if invalid inputs raises an error
-
-            // Given parameters
             ArrayList<String> cellphones = new ArrayList<>();
             Purchase purchase = new Purchase(false, 9, cellphones, 0);
             // When maximum of phonelines is exceeded
@@ -41,7 +36,6 @@ class PurchaseTest {
             assertEquals("8 phone lines is the maximum", exception.getMessage());
 
         // Checks if valid inputs passes
-
             Purchase purchase1 = new Purchase(false, 1, cellphones, 0);
             assertEquals(150, purchase1.addPhoneLine());
 
@@ -59,7 +53,6 @@ class PurchaseTest {
             ArrayList<Integer> invalidAmountOfPhonelines = new ArrayList<>( Arrays.asList(-1, -5, -100, 10));
             ArrayList<String> cellphones = new ArrayList<>();
             Purchase purchase = new Purchase();
-
 
             int i;
             for (i = 0; i < invalidAmountOfPhonelines.size(); i++) {
