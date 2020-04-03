@@ -27,7 +27,7 @@ class PurchaseTest {
     @Test
     void addPhoneLine() {
 
-        // Tests if invalid inputs raises an error.
+        // Tests if invalid inputs raises an error
             ArrayList<String> cellphones = new ArrayList<>();
             Purchase purchase = new Purchase(false, 9, cellphones, 0);
             // When maximum of phonelines is exceeded
